@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#172c3b">
+    <meta name="description" content="Selected journalism by Lynsey Carratt — interviews, features, culture writing and reviews, online and in print.">
+    <title>Lynsey Carratt — Journalist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to portfolio</a>
+    <div class="portfolio-shell">
+      <aside class="identity-rail" aria-labelledby="lynsey-name">
+        <a class="monogram" href="#main" aria-label="Lynsey Carratt portfolio">LC<span>·</span></a>
+        <div class="identity-main">
+          <div class="identity-role"><span></span><p><span data-site="role">Journalist &amp; writer</span><br><span data-site="location">London, UK</span></p></div>
+          <h1 id="lynsey-name"><span data-site="first-name">Lynsey</span><br><span data-site="last-name">Carratt</span></h1>
+          <p class="identity-summary" data-site="summary">Interviews, features and reviews that put people at the heart of the story.</p>
+        </div>
+        <div class="identity-bottom">
+          <a class="contact-link" data-site-href="contactUrl" href="https://www.instagram.com/ladylynsey30/" target="_blank" rel="noreferrer"><span data-site="contactLabel">Contact Lynsey</span><b aria-hidden="true">↗</b></a>
+          <p data-site="contactTopics">Commissions · collaborations<br>Print portfolio enquiries</p>
+          <span class="rail-edition" data-site="selectedYears">Selected work / 2012—24</span>
+        </div>
+        <span class="rail-mark" aria-hidden="true">PRESS<br>COPY</span>
+      </aside>
+
+      <main class="workspace" id="main">
+        <header class="workspace-header">
+          <nav class="view-tabs" role="tablist" aria-label="Portfolio sections">
+            <button class="view-tab is-active" id="tab-work" type="button" role="tab" aria-selected="true" aria-controls="work-panel" data-view="work">Online work <span data-work-count>07</span></button>
+            <button class="view-tab" id="tab-print" type="button" role="tab" aria-selected="false" aria-controls="print-panel" data-view="print" tabindex="-1">Print archive</button>
+            <button class="view-tab" id="tab-about" type="button" role="tab" aria-selected="false" aria-controls="about-panel" data-view="about" tabindex="-1">About</button>
+          </nav>
+          <span class="workspace-location">Independent journalist <i></i> London</span>
+        </header>
+
+        <section class="view-panel work-panel" id="work-panel" role="tabpanel" aria-labelledby="tab-work" tabindex="0">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Selected bylines &amp; contributions</p>
+              <h2>Online work</h2>
+            </div>
+            <p class="panel-deck" data-site="workIntro">A selection of features, culture writing, reviews and product testing. Links open at the original publisher or archive.</p>
+          </div>
+          <div class="filter-row" role="group" aria-label="Filter online work">
+            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="features" aria-pressed="false">Features</button>
+            <button class="filter-button" type="button" data-filter="reviews" aria-pressed="false">Reviews</button>
+            <button class="filter-button" type="button" data-filter="news" aria-pressed="false">Arts &amp; culture</button>
+          </div>
+          <div class="work-grid" id="work-grid" aria-live="polite"></div>
+          <p class="filter-empty" id="filter-empty" hidden>No pieces in this category yet.</p>
+          <a class="archive-link" data-site-href="whatshotArchiveUrl" href="https://www.whatshotlondon.co.uk/author/lcaratt/" target="_blank" rel="noreferrer"><span data-site="whatshotArchiveLabel">Full What’s Hot London author archive</span><b aria-hidden="true">↗</b></a>
+        </section>
+
+        <section class="view-panel print-panel" id="print-panel" role="tabpanel" aria-labelledby="tab-print" tabindex="0" hidden>
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Magazine &amp; print</p>
+              <h2>Print archive</h2>
+            </div>
+            <p class="panel-deck">A record of magazine work, with scans and issue details to add as they’re gathered and cleared for display.</p>
+          </div>
+          <div class="print-record">
+            <div class="archive-folder" aria-hidden="true"><span>LC</span><i></i><b></b></div>
+            <div class="print-record-copy">
+              <p class="record-publication"><span data-print="publication">Ahlan! Magazine</span> <span data-print="location">Dubai</span></p>
+              <h3 data-print="role">Online editor &amp; journalist</h3>
+              <p data-print="description">A contemporaneous 2013 industry reference identifies Lynsey in this editorial role. Print clippings and issue references are not yet available in this archive.</p>
+              <a data-print-href="referenceUrl" href="https://www.hoteliermiddleeast.com/events/hotelier-awards/18448-hotelier-awards-2013-prmarketing-finalists" target="_blank" rel="noreferrer"><span data-print="referenceLabel">Read the 2013 reference</span> <b aria-hidden="true">↗</b></a>
+            </div>
+          </div>
+          <div class="print-clippings" id="print-clippings" hidden aria-label="Print clippings"></div>
+          <div class="archive-status"><span class="status-mark"></span><span data-print="status">Print scans and issue details to follow</span></div>
+        </section>
+
+        <section class="view-panel about-panel" id="about-panel" role="tabpanel" aria-labelledby="tab-about" tabindex="0" hidden>
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">A little context</p>
+              <h2>About Lynsey</h2>
+            </div>
+          </div>
+          <div class="about-content">
+            <p class="about-lede" data-site="aboutLede">London-based journalist covering people, performances and places.</p>
+            <p data-site="aboutBio">Lynsey Carratt’s published work spans entertainment, music, arts and culture, lifestyle and reviews. Her stories bring a people-first perspective to the personalities and places that make a story worth telling.</p>
+            <div class="coverage-list" id="coverage-list"></div>
+            <p class="about-note" data-site="aboutNote">This portfolio links to original publishers where available. Archived and contributor credits are identified.</p>
+            <a class="about-contact" data-site-href="contactUrl" href="https://www.instagram.com/ladylynsey30/" target="_blank" rel="noreferrer"><span data-site="contactLabel">Get in touch with Lynsey</span><b aria-hidden="true">↗</b></a>
+          </div>
+        </section>
+
+        <footer class="workspace-footer"><span>© <span id="current-year">2026</span> <span data-site="name">Lynsey Carratt</span></span><span>Portfolio / <span data-site="location">London, UK</span></span></footer>
+      </main>
+    </div>
+  </body>
+</html>

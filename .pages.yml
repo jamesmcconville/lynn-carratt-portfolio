@@ -1,0 +1,171 @@
+media:
+  input: public/clippings
+  output: /clippings
+  rename: safe
+  extensions: [pdf, png, jpg, jpeg, webp]
+
+content:
+  - name: portfolio
+    label: Portfolio
+    type: group
+    items:
+      - name: work
+        label: Online work
+        type: collection
+        path: src/content/work
+        filename: "{title}.json"
+        format: json
+        view:
+          fields: [title, kind, date]
+          primary: title
+          sort: [date, title]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: title
+            label: Headline
+            type: string
+            required: true
+          - name: url
+            label: Published link
+            type: string
+            required: true
+          - name: category
+            label: Filter category
+            type: select
+            required: true
+            options:
+              values:
+                - name: features
+                  label: Features
+                - name: reviews
+                  label: Reviews
+                - name: news
+                  label: Arts & culture
+          - name: kind
+            label: Work type
+            type: string
+            required: true
+          - name: date
+            label: Publication date
+            type: string
+            description: Use YYYY or YYYY-MM, for example 2024-01.
+            required: true
+          - name: credit
+            label: Byline or contribution
+            type: string
+            required: true
+          - name: linkLabel
+            label: Publisher / link label
+            type: string
+            required: true
+          - name: description
+            label: Short description
+            type: text
+            required: true
+          - name: featured
+            label: Feature this entry
+            type: boolean
+
+      - name: profile
+        label: Profile & contact
+        type: file
+        path: src/content/site.json
+        format: json
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: role
+            label: Role
+            type: string
+          - name: location
+            label: Location
+            type: string
+          - name: summary
+            label: Short introduction
+            type: text
+          - name: contactUrl
+            label: Contact link
+            type: string
+          - name: contactLabel
+            label: Contact link label
+            type: string
+          - name: contactTopics
+            label: Contact topics
+            type: text
+          - name: selectedYears
+            label: Portfolio date range
+            type: string
+          - name: workIntro
+            label: Work introduction
+            type: text
+          - name: whatshotArchiveUrl
+            label: What’s Hot London archive URL
+            type: string
+          - name: whatshotArchiveLabel
+            label: What’s Hot London archive label
+            type: string
+          - name: aboutLede
+            label: About headline
+            type: text
+          - name: aboutBio
+            label: About copy
+            type: text
+          - name: coverage
+            label: Coverage areas
+            type: string
+            list: true
+          - name: aboutNote
+            label: Portfolio note
+            type: text
+
+      - name: print
+        label: Print archive
+        type: file
+        path: src/content/print.json
+        format: json
+        fields:
+          - name: publication
+            label: Publication
+            type: string
+          - name: location
+            label: Location
+            type: string
+          - name: role
+            label: Editorial role
+            type: string
+          - name: description
+            label: Context
+            type: text
+          - name: referenceUrl
+            label: Reference link
+            type: string
+          - name: referenceLabel
+            label: Reference link label
+            type: string
+          - name: status
+            label: Archive status
+            type: string
+          - name: clippings
+            label: Scanned clippings
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: Clipping title
+                type: string
+                required: true
+              - name: year
+                label: Year
+                type: string
+              - name: file
+                label: Scan file
+                type: file
+                options:
+                  extensions: [pdf, png, jpg, jpeg, webp]
