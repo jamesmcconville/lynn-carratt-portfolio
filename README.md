@@ -22,20 +22,30 @@ The deployable site is written to `dist/`.
 
 ## Deploy to Cloudflare Pages
 
-### Connect a Git repository
+### Connect a Git repository (recommended)
 
-1. In Cloudflare, go to **Workers & Pages → Create → Pages → Connect to Git** and select `jamesmcconville/lynsey-carratt-portfolio`.
-3. Set the build command to `npm run build` and the build output directory to `dist`.
-4. Leave the root directory as `/` and deploy.
+This gives a production URL and rebuilds automatically whenever Pages CMS commits an edit.
 
-Cloudflare Pages will build and publish the site on each push. No environment variables or server-side runtime are required.
+1. In Cloudflare, go to **Workers & Pages → Create → Pages → Connect to Git**.
+2. Authorise GitHub and select `jamesmcconville/lynsey-carratt-portfolio`.
+3. Project name: `lynsey-carratt-portfolio` (this becomes `lynsey-carratt-portfolio.pages.dev`).
+4. Production branch: `main`.
+5. Framework preset: **None** (or Vite). Build command: `npm run build`. Build output directory: `dist`. Root directory: `/`.
+6. Add an environment variable `NODE_VERSION` = `22.16.0` so Vite 7 builds on a supported Node release.
+7. Select **Save and Deploy**.
 
-### Deploy from the command line
+Cloudflare Pages will build and publish the site on each push. No server-side runtime is required.
 
-After creating a Pages project and authenticating Wrangler with Cloudflare, run:
+> Do not create the project with Wrangler/Direct Upload first. Cloudflare does not allow converting a Direct Upload project to Git integration later — you would have to create a second project.
+
+### Deploy from the command line (manual)
+
+Only use this if you deliberately want a Direct Upload project. It will not rebuild when content changes:
 
 ```sh
-npx wrangler pages deploy dist --project-name YOUR_CLOUDFLARE_PAGES_PROJECT
+npm run build
+npx wrangler pages project create lynsey-carratt-portfolio --production-branch main
+npx wrangler pages deploy dist --project-name lynsey-carratt-portfolio
 ```
 
 ## Updating the portfolio
