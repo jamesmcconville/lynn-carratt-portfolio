@@ -86,6 +86,21 @@ button { font: inherit; }
 .archive-link { align-self: flex-start; display: inline-flex; gap: 7px; color: var(--ink); font-size: 9px; font-weight: 700; text-decoration: none; }
 .archive-link b { color: var(--blue); font-size: 12px; }
 .archive-link:hover { color: var(--blue); }
+
+.press-list { margin-top: 20px; border-top: 1px solid var(--line); }
+.press-entry { display: grid; grid-template-columns: 118px minmax(0, 1fr); column-gap: clamp(18px, 3vw, 38px); padding: 17px 0 15px; border-bottom: 1px solid var(--line); }
+.press-meta { display: flex; flex-direction: column; gap: 3px; padding-top: 4px; }
+.press-outlet { color: var(--ink); font: 700 12px/1.15 var(--display); letter-spacing: .015em; text-transform: uppercase; }
+.press-meta time { color: #71818a; font-size: 8px; font-weight: 600; }
+.press-body { min-width: 0; }
+.press-quote { max-width: 560px; margin: 0 0 8px; color: var(--ink); font: 600 clamp(18px, 1.9vw, 23px)/1.22 var(--display); letter-spacing: -.005em; }
+.press-body h3 { max-width: 560px; margin: 0 0 5px; font: 600 11px/1.4 var(--body); }
+.press-body h3 a { text-decoration-color: transparent; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.press-body h3 a:hover { color: var(--blue); text-decoration-color: currentColor; }
+.press-context { max-width: 540px; margin: 0 0 8px; color: var(--muted); font-size: 9px; line-height: 1.55; }
+.press-credit { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: #667983; font-size: 8px; font-weight: 600; }
+.press-credit b { color: var(--blue); font-size: 12px; }
+.press-note { margin: 13px 0 0; color: #71818a; font-size: 8px; }
 .workspace-footer { display: flex; justify-content: space-between; gap: 15px; padding-top: 11px; border-top: 1px solid var(--line); color: #7c8c93; font-size: 8px; }
 
 .print-panel .panel-deck { max-width: 280px; }
@@ -182,8 +197,13 @@ button { font: inherit; }
   .published-as { max-width: 270px; font-size: 8px; }
   .identity-bottom p { max-width: 150px; font-size: 8px; }
   .workspace { padding-inline: 20px; }
-  .view-tabs { width: 100%; justify-content: space-between; gap: 8px; }
-  .view-tab { gap: 5px; font-size: 9px; }
+  .view-tabs { width: 100%; justify-content: flex-start; gap: 14px; overflow-x: auto; scrollbar-width: none; }
+  .view-tabs::-webkit-scrollbar { display: none; }
+  .view-tab { flex: 0 0 auto; gap: 5px; font-size: 9px; }
+  .press-entry { display: block; padding: 15px 0 13px; }
+  .press-meta { flex-direction: row; align-items: baseline; gap: 8px; margin-bottom: 7px; padding-top: 0; }
+  .press-quote { font-size: 21px; }
+  .press-context { font-size: 9px; }
   .panel-heading { display: block; }
   .panel-heading h2 { font-size: 48px; }
   .panel-deck { max-width: 370px; margin-top: 10px; }

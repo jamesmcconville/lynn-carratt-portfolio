@@ -29,6 +29,26 @@ Each JSON file in this folder is one published piece. In Pages CMS, add a new it
 - For reviews or contributions that are not Lynn’s byline, describe the role accurately in `credit` and `linkLabel`.
 - Use plain text for titles and descriptions; the site renders these safely without HTML.
 
+## `press/`
+
+Each JSON file here is a place where Lynn is **quoted as an expert** in someone else’s article. These are not her bylines, so they live in a separate “In the press” tab:
+
+```json
+{
+  "outlet": "The Guardian",
+  "date": "2024-03",
+  "title": "Article headline",
+  "url": "https://publisher.example/article",
+  "quote": "The exact words attributed to Lynn.",
+  "context": "One sentence on what the quote is about.",
+  "credit": "Head of talent, Press Box PR"
+}
+```
+
+- `quote` must be copied verbatim from the published article — do not paraphrase or join separate sentences.
+- `credit` should match the role or title the publication used.
+- Re-check the link and quote before adding; remove entries if the article is taken down.
+
 ## `print.json`
 
 Contains the magazine role, context, source link, and archive status. Add scans as PDFs or images using the **Scanned clippings** field in Pages CMS. The uploaded file is stored under `public/clippings/` and its reference is added to the `clippings` array:

@@ -9,6 +9,10 @@ const workItems = Object.values(
   return featuredFirst || String(b.date || "").localeCompare(String(a.date || "")) || a.title.localeCompare(b.title);
 });
 
+const pressItems = Object.values(
+  import.meta.glob("./content/press/*.json", { eager: true, import: "default" }),
+).sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")) || a.outlet.localeCompare(b.outlet));
+
 const setText = (selector, value) => {
   document.querySelectorAll(selector).forEach((element) => {
     element.textContent = value ?? "";
@@ -90,6 +94,42 @@ workItems.forEach((item) => {
 });
 
 setText("[data-work-count]", String(workItems.length).padStart(2, "0"));
+
+// Build the press list from src/content/press/*.json.
+const pressList = document.querySelector("#press-list");
+
+pressItems.forEach((item) => {
+  const entry = createTextElement("article", "press-entry");
+  const meta = createTextElement("div", "press-meta");
+  meta.append(createTextElement("span", "press-outlet", item.outlet));
+  const date = createTextElement("time", "", item.date?.slice(0, 4));
+  if (item.date) date.dateTime = item.date;
+  meta.append(date);
+
+  const body = createTextElement("div", "press-body");
+  body.append(createTextElement("blockquote", "press-quote", `“${item.quote}”`));
+
+  const heading = document.createElement("h3");
+  const titleLink = createTextElement("a", "", item.title);
+  if (isWebUrl(item.url)) {
+    titleLink.href = item.url;
+    titleLink.target = "_blank";
+    titleLink.rel = "noreferrer";
+  }
+  heading.append(titleLink);
+
+  const credit = createTextElement("div", "press-credit");
+  credit.append(createTextElement("span", "", `Credited as ${item.credit}`));
+  const arrow = createTextElement("b", "", "↗");
+  arrow.setAttribute("aria-hidden", "true");
+  credit.append(arrow);
+
+  body.append(heading, createTextElement("p", "press-context", item.context), credit);
+  entry.append(meta, body);
+  pressList.append(entry);
+});
+
+setText("[data-press-count]", String(pressItems.length).padStart(2, "0"));
 
 // Populate the print archive from src/content/print.json.
 Object.entries(printArchive).forEach(([key, value]) => {

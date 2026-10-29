@@ -68,6 +68,52 @@ content:
             label: Feature this entry
             type: boolean
 
+      - name: press
+        label: In the press
+        type: collection
+        path: src/content/press
+        filename: "{outlet}-{title}.json"
+        format: json
+        view:
+          fields: [outlet, date, title]
+          primary: title
+          sort: [date]
+          default:
+            sort: date
+            order: desc
+        fields:
+          - name: outlet
+            label: Publication
+            type: string
+            required: true
+          - name: date
+            label: Date
+            type: string
+            description: Use YYYY or YYYY-MM, for example 2026-03.
+            required: true
+          - name: title
+            label: Article headline
+            type: string
+            required: true
+          - name: url
+            label: Article link
+            type: string
+            required: true
+          - name: quote
+            label: Attributed quote
+            type: text
+            required: true
+            description: Copy the quote exactly as published, including punctuation.
+          - name: context
+            label: Context
+            type: text
+            description: One short sentence explaining what the quote is about.
+          - name: credit
+            label: Credited as
+            type: string
+            required: true
+            description: The exact role or title used by the publication.
+
       - name: profile
         label: Profile & contact
         type: file

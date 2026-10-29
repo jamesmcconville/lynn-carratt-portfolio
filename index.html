@@ -34,6 +34,7 @@
         <header class="workspace-header">
           <nav class="view-tabs" role="tablist" aria-label="Portfolio sections">
             <button class="view-tab is-active" id="tab-work" type="button" role="tab" aria-selected="true" aria-controls="work-panel" data-view="work">Online work <span data-work-count>07</span></button>
+            <button class="view-tab" id="tab-press" type="button" role="tab" aria-selected="false" aria-controls="press-panel" data-view="press" tabindex="-1">In the press <span data-press-count></span></button>
             <button class="view-tab" id="tab-print" type="button" role="tab" aria-selected="false" aria-controls="print-panel" data-view="print" tabindex="-1">Print archive</button>
             <button class="view-tab" id="tab-about" type="button" role="tab" aria-selected="false" aria-controls="about-panel" data-view="about" tabindex="-1">About</button>
           </nav>
@@ -60,6 +61,18 @@
             <a class="archive-link" data-site-href="clippingsUrl" href="https://www.clippings.me/users/lynncarratt" target="_blank" rel="noreferrer"><span data-site="clippingsLabel">Browse Lynn Carratt’s full clips portfolio</span><b aria-hidden="true">↗</b></a>
             <a class="archive-link" data-site-href="whatshotArchiveUrl" href="https://www.whatshotlondon.co.uk/author/lcaratt/" target="_blank" rel="noreferrer"><span data-site="whatshotArchiveLabel">Full What’s Hot London author archive</span><b aria-hidden="true">↗</b></a>
           </div>
+        </section>
+
+        <section class="view-panel press-panel" id="press-panel" role="tabpanel" aria-labelledby="tab-press" tabindex="0" hidden>
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Expert commentary</p>
+              <h2>In the press</h2>
+            </div>
+            <p class="panel-deck">Lynn is regularly asked to comment on entertainment, royal and media stories. These are quotes attributed to her in other publications — not articles she wrote.</p>
+          </div>
+          <div class="press-list" id="press-list"></div>
+          <p class="press-note">Each quote has been checked against the published article.</p>
         </section>
 
         <section class="view-panel print-panel" id="print-panel" role="tabpanel" aria-labelledby="tab-print" tabindex="0" hidden>
