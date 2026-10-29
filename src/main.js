@@ -39,6 +39,7 @@ const nameParts = site.name.trim().split(/\s+/);
 setText('[data-site="first-name"]', nameParts.slice(0, -1).join(" "));
 setText('[data-site="last-name"]', nameParts.at(-1));
 setLinks('[data-site-href="contactUrl"]', site.contactUrl);
+setLinks('[data-site-href="clippingsUrl"]', site.clippingsUrl);
 setLinks('[data-site-href="whatshotArchiveUrl"]', site.whatshotArchiveUrl);
 document.title = `${site.name} — Journalist`;
 document.querySelector('meta[name="description"]').content = `${site.name} — ${site.summary}`;

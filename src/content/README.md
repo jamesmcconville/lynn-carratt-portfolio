@@ -4,7 +4,7 @@ The portfolio is file-managed. Pages CMS provides a browser editor for these sam
 
 ## `site.json`
 
-Holds the name, role, location, short introduction, contact link, about copy, topic list, and the What’s Hot London archive link. The contact destination is currently Lynsey’s Instagram profile.
+Holds the name, role, location, short introduction, alternate-byline note, contact link, About copy, topic list, and archive links. Lynn Carratt is the main portfolio name; some earlier work is published as Lynsey Carratt. Keep every individual clip’s credit exactly as shown by its publisher. The contact destination is currently Lynn’s Instagram profile.
 
 ## `work/`
 
@@ -17,7 +17,7 @@ Each JSON file in this folder is one published piece. In Pages CMS, add a new it
   "category": "features",
   "kind": "Interview",
   "date": "2026-04",
-  "credit": "By Lynsey Carratt",
+  "credit": "By Lynn Carratt",
   "linkLabel": "Publication name",
   "description": "A short, factual description of the piece."
 }
@@ -26,7 +26,7 @@ Each JSON file in this folder is one published piece. In Pages CMS, add a new it
 - `category` must be `features`, `reviews`, or `news` to match the portfolio filters.
 - `date` can be a year (`2026`) or year and month (`2026-04`).
 - Set `"featured": true` on one item to give it the larger lead treatment.
-- For reviews or contributions that are not Lynsey’s byline, describe the role accurately in `credit` and `linkLabel`.
+- For reviews or contributions that are not Lynn’s byline, describe the role accurately in `credit` and `linkLabel`.
 - Use plain text for titles and descriptions; the site renders these safely without HTML.
 
 ## `print.json`

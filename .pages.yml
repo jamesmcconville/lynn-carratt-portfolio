@@ -87,6 +87,9 @@ content:
           - name: summary
             label: Short introduction
             type: text
+          - name: publishedAs
+            label: Alternate byline note
+            type: text
           - name: contactUrl
             label: Contact link
             type: string
@@ -102,6 +105,12 @@ content:
           - name: workIntro
             label: Work introduction
             type: text
+          - name: clippingsUrl
+            label: Full clips portfolio URL
+            type: string
+          - name: clippingsLabel
+            label: Full clips portfolio link label
+            type: string
           - name: whatshotArchiveUrl
             label: What’s Hot London archive URL
             type: string

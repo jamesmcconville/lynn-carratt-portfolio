@@ -1,4 +1,4 @@
-# Lynsey Carratt Portfolio
+# Lynn Carratt Portfolio
 
 A static portfolio site built with Vite. The production build is a bundle of static files, so it can be hosted on Cloudflare Pages without a server or framework adapter.
 
@@ -24,8 +24,7 @@ The deployable site is written to `dist/`.
 
 ### Connect a Git repository
 
-1. Push this project to a GitHub or GitLab repository.
-2. In Cloudflare, go to **Workers & Pages → Create → Pages → Connect to Git** and select the repository.
+1. In Cloudflare, go to **Workers & Pages → Create → Pages → Connect to Git** and select `jamesmcconville/lynsey-carratt-portfolio`.
 3. Set the build command to `npm run build` and the build output directory to `dist`.
 4. Leave the root directory as `/` and deploy.
 
@@ -49,4 +48,4 @@ npx wrangler pages deploy dist --project-name YOUR_CLOUDFLARE_PAGES_PROJECT
 - Edit visual styles in `styles.css`.
 - Keep `dist/` out of source control; Vite generates it during each build.
 
-This directory is not connected to a GitHub repository yet. Connect or push the project to GitHub before Pages CMS can provide the browser-based editor.
+The source is public at [github.com/jamesmcconville/lynsey-carratt-portfolio](https://github.com/jamesmcconville/lynsey-carratt-portfolio). Cloudflare Pages still needs to be connected to publish the site; Pages CMS also needs GitHub App authorization before its browser editor can access the repository.
