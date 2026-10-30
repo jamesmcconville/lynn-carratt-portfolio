@@ -27,8 +27,8 @@ The deployable site is written to `dist/`.
 This gives a production URL and rebuilds automatically whenever Pages CMS commits an edit.
 
 1. In Cloudflare, go to **Workers & Pages → Create → Pages → Connect to Git**.
-2. Authorise GitHub and select `jamesmcconville/lynsey-carratt-portfolio`.
-3. Project name: `lynsey-carratt-portfolio` (this becomes `lynsey-carratt-portfolio.pages.dev`).
+2. Authorise GitHub and select `jamesmcconville/lynn-carratt-portfolio`.
+3. Project name: `lynn-carratt` (this becomes `lynn-carratt.pages.dev`).
 4. Production branch: `main`.
 5. Framework preset: **None** (or Vite). Build command: `npm run build`. Build output directory: `dist`. Root directory: `/`.
 6. Add an environment variable `NODE_VERSION` = `22.16.0` so Vite 7 builds on a supported Node release.
@@ -44,8 +44,8 @@ Only use this if you deliberately want a Direct Upload project. It will not rebu
 
 ```sh
 npm run build
-npx wrangler pages project create lynsey-carratt-portfolio --production-branch main
-npx wrangler pages deploy dist --project-name lynsey-carratt-portfolio
+npx wrangler pages project create lynn-carratt --production-branch main
+npx wrangler pages deploy dist --project-name lynn-carratt
 ```
 
 ## Updating the portfolio
@@ -58,4 +58,4 @@ npx wrangler pages deploy dist --project-name lynsey-carratt-portfolio
 - Edit visual styles in `styles.css`.
 - Keep `dist/` out of source control; Vite generates it during each build.
 
-The source is public at [github.com/jamesmcconville/lynsey-carratt-portfolio](https://github.com/jamesmcconville/lynsey-carratt-portfolio). Cloudflare Pages still needs to be connected to publish the site; Pages CMS also needs GitHub App authorization before its browser editor can access the repository.
+The source is public at [github.com/jamesmcconville/lynn-carratt-portfolio](https://github.com/jamesmcconville/lynn-carratt-portfolio). Cloudflare Pages still needs to be connected to publish the site; Pages CMS also needs GitHub App authorization before its browser editor can access the repository.
